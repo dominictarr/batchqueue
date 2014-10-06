@@ -23,8 +23,7 @@ module.exports = function (write, onError) {
 
   return function (data) {
     batch.push(data)
-    drain()
-//    setImmediate(drain)
+    setImmediate(drain)
   }
 
 }

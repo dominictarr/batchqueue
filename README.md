@@ -17,6 +17,9 @@ var queue =
 queue({key: foo, value: blah, type: 'put'})
 ```
 
+batchqueue only ever processes one batch at a time,
+so you know for sure that writes are ordered as you expect.
+
 ## License
 
 MIT
