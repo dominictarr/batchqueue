@@ -1,7 +1,9 @@
 
 
-module.exports = function (write, onError) {
+module.exports = function (write, listener) {
   var batch = [], writing = false
+
+  if(!listener) listener = function (err) { if(err) throw err }
 
   function drain () {
     if(writing)       return
@@ -13,10 +15,9 @@ module.exports = function (write, onError) {
 
     write(_batch, function (err) {
       writing = false
-      if(onError) onError(err)
-      else throw err
-
-      setImmediate(drain)
+      if(err) listener(err) //error
+      if(!batch.length) listener() //drain
+      else setImmediate(drain)
     })
 
   }
