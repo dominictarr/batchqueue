@@ -1,0 +1,19 @@
+{
+  "name": "batchqueue",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/batchqueue",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/batchqueue.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "interleavings": "~0.3.0"
+  },
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
